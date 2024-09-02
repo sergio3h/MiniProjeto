@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuição de Poisson - Apresentação</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+</head>
+<body>
+    <h1>Distribuição de Poisson</h1>
+
+    <p>A distribuição de Poisson é uma distribuição de probabilidade discreta que modela o número de eventos que ocorrem em um intervalo fixo de tempo ou espaço, quando esses eventos ocorrem com uma taxa média constante e de forma independente. É amplamente utilizada em diversas áreas, como:
+    </p>
+
+    <ul>
+        <li><b>Fenômenos naturais:</b> Número de partículas radioativas que decaem em um determinado período, número de chamadas telefônicas em um call center por minuto.</li>
+        <li><b>Processos industriais:</b> Número de defeitos em um metro de tecido, número de carros que chegam a um pedágio em uma hora.
+        </li>
+        <li><b>Demografia:</b> Número de nascimentos em um hospital por dia, número de acidentes de trânsito em uma cidade por semana.
+        </li>
+    </ul>
+    <img src="poissonn.jpeg" />
+
+    <div class="equation">
+    P(X = x) = (e^(-λ) * λ^x) / x!
+    </div>
+
+    <p> A probabilidade de que existam exatamente x ocorrências (x sendo um inteiro não negativo, X = 0, 1, 2, ...
+    </p>
+
+    <ul>
+        <li>
+            e é base do logaritmo natural (e = 2.71828...),
+        </li>
+        <li>
+            x! é o fatorial de x,
+        </li>
+        <li>
+            λ é um número real, igual ao número esperado de ocorrências que ocorrem num dado intervalo de tempo. Por exemplo, se o evento ocorre a uma média de 4 minutos, e estamos interessados no número de eventos que ocorrem num intervalo de 10 minutos, usaríamos como modelo a distribuição de Poisson com λ=10/4= 2.5.
+        </li>
+    </ul>
+
+    <p>
+        Como função de x, esta é a função de probabilidade. A distribuição de Poisson pode ser derivada como um caso limite da distribuição binomial.
+    </p>
+
+    <ul>
+        <li>
+            <b>Problema:</b> Uma loja de conveniência recebe em média 3 clientes por hora. Qual a probabilidade de que em uma hora específica cheguem exatamente 5 clientes?
+        </li>
+        <li>
+            <b>Modelagem:</b> O número de clientes que chegam por hora pode ser modelado por uma distribuição de Poisson, onde a taxa média λ é igual a 3.
+        </li>
+        <li>
+            <b>Média (E[X]) = Variância (Var[X]) = λ:</b>A média e a variância da distribuição de Poisson são ambas iguais ao parâmetro λ.
+        </li>
+        <li>
+            <b>Simetria</b> A distribuição de Poisson é assimétrica à direita para valores pequenos de λ e se aproxima de uma distribuição normal à medida que λ aumenta.
+
+        </li>
+    </ul>
+
+    <div class="example">
+    <h2>Um Exemplo Prático da Distribuição de Poisson</h2>
+    <p> Uma central de atendimento telefônico recebe, em média, 10 chamadas por hora. Qual a probabilidade de receber exatamente 15 chamadas em uma hora específica?</p>
+
+    <h1>Solução</h1>
+
+    <b>Identificação:</b>
+    <ul>
+        <li>O evento de interesse é o número de chamadas recebidas em um intervalo de tempo fixo (1 hora).</li>
+        <li>As chamadas são eventos independentes (uma chamada não afeta a probabilidade de outra).</li>
+        <li>A taxa média de ocorrência é constante (10 chamadas por hora).
+        </li>
+        <li>
+            <b>Parâmetro λ:</b>
+            λ representa a taxa média de ocorrência, nesse caso, λ = 10 chamadas/hora.
+        </li>
+    </ul>
+    </div>
+    <div>
+        <h1>Utilizando a fórmula da PMF de Poisson:</h1>
+        <p>P(X = x) = (e^(-λ) * λ^x) / x!</p>
+        <ul>
+            <li>P(X = x) é a probabilidade de ocorrer exatamente x eventos</li>
+            <li>e é a constante de Euler (aproximadamente 2.71828)</li>
+            <li>λ é a taxa média</li>
+            <li>x é o número de ocorrências desejado (no nosso caso, x = 15)</li>
+            <li>x! é o fatorial de x</li>
+        </ul>
+        <h3>Substituindo os valores:</h3>
+        <p>P(X = 15) = (e^(-10) * 10^15) / 15!</p>
+        <h3>Usando uma calculadora científica ou software estatístico, encontramos:</h3>
+        <P>P(X = 15) ≈ 0.0347</P>
+
+        <h3>Interpretação</h3>
+        <p>A probabilidade de a central de atendimento receber exatamente 15 chamadas em uma hora é de aproximadamente 3,47%. Isso significa que, se repetirmos esse experimento (contar o número de chamadas em uma hora) muitas vezes, em cerca de 3,47% das vezes obteremos exatamente 15 chamadas.
+        </p>
+        <h3>Por que a Distribuição de Poisson é adequada neste caso?</h3>
+        <ul>
+            <li>
+                As chamadas telefônicas são eventos independentes.
+            </li>
+            <li>
+                A taxa média de chamadas é constante.
+            </li>
+            <li>
+                O número de chamadas em um intervalo de tempo pequeno é relativamente baixo.
+            </li>
+        </ul>
+        <img src="diagrama.png" />
+        
+    </div>
+
+    <footer>&#169;Sergio & Riquelme</footer>
+</body>
+</html>
